@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook for developers</title>
+    <script src="https://kit.fontawesome.com/628bb20399.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            height: 90px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 30px;
+            padding-right: 30px;
+            position: fixed;
+        }
+        nav{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .lgse{
+            display: flex;
+            align-items: center;
+            height: 90px;
+        }
+        .logo{
+            width: 100px;
+            height: 70px;
+        }
+        .ul1{
+            display: flex;
+            list-style-type: none;
+            gap: 30px;
+            align-items: center;
+            text-decoration: blue;
+            color: rgb(28, 43, 51)
+        }
+        .ahead:hover{
+           text-decoration: underline;
+           text-decoration-color: rgb(65,138,247);
+        }
+        .alogin{
+            text-decoration: none;
+            color: rgb(28, 43, 51)
+        }
+        .alogin:hover{
+            cursor: pointer;
+        }
+        .loginbtn{
+            width: 80px;
+            height: 30px;
+           border: none;
+          background-color: white;
+        }
+        .fa-magnifying-glass{
+            font-size: large;
+        }
+        section{
+            min-height: 1000px;
+        }
+        .imagegrid{
+            width: 100%;
+            height: 750px;
+        }
+        .imggrid{
+            margin-top: 90px;
+            width: 100%;
+            height: 750px;
+        }
+        .imagegridm1{
+            border: 1px solid;
+            width: 100%;
+            height: 750px;
+        }
+        .imggridm1{
+            border: 1px solid;
+            margin-top: 50px;
+            width: 100%;
+            height: 750px;
+            /* position: relative; */
+        }
+        .h11{
+            
+            width:43% ;
+            font-family: "Optimistic Display", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 64px;
+            Font-weight: 500;
+            Line-height: 70.4px;
+            color: rgb(28, 43, 51);
+            position: relative;
+            bottom: 520px;
+            left: 32.5%;
+        }
+        .p1{
+            width: 43%;
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 18px;
+            Font-weight: 400;
+            Line-height: 27px;
+            color: rgb(28, 43, 51);
+            position: relative;
+            bottom: 500px;
+            left: 30%;
+        }
+        span{
+            position: relative;
+            left: 37.5%;
+        }
+        .ulicons{
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            list-style-type: none;
+            position: relative;
+            bottom: 250px;
+            justify-content: center;
+        }
+        .uliconsm1{
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            list-style-type: none;
+            position: relative;
+            bottom: 300px;
+            justify-content: center;
+        }
+        .imgicons{
+            width: 65px;
+            border-radius: 20px;
+        }
+        .imgiconsm1{
+            width: 65px;
+            border-radius: 20px;
+        }
+        .metaconnect{
+            padding-left: 100px;
+            padding-right: 150px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .watchnow{
+            width: 580px;
+            height: 200px;
+
+        }
+        .h12{
+            font-family: "Optimistic Display", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 36px;
+            Font-weight: 500;
+            Line-height: 39.6px;
+            color: rgb(28, 43, 51);
+        }
+        .p2{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 18px;
+            Font-weight: 400;
+            Line-height: 27px;
+            color: rgb(70, 90, 105);
+        }
+        .watchbtn{
+            width: 120px;
+            height: 40px;
+            border-radius: 25px;
+            background-color: rgb(0,100,224);
+            color: white;
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 16px;
+            Font-weight: 700;
+            Line-height: 22.4px;
+            border: none;
+        }
+        .watchbtn:hover{
+            opacity: 0.8;
+        }
+        .exptext{
+            margin-top: 100px;
+            padding-left: 100px;
+            padding-right: 150px;
+        }
+        .explore{
+            margin-top: 20px;
+            height: 700px;
+            padding-left: 100px;
+            padding-right: 150px; 
+            display: flex;
+            gap: 40px;
+        }
+        .card{
+            height: 550px;
+            width: 35%;
+            border-radius: 20px;
+            background-color: rgb(248,249,251);
+        }
+        .cardimg{
+            width: 100%;
+            height: 350px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .cardtext{
+            width: 100%;
+            height:200px ;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding-left: 30px;
+            padding-right: 60px;
+            padding-top: 20px;
+            line-height: 30px;
+        }
+        .cdimg{
+            width: 100%;
+            height: 350px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .h21{
+           font-family: "Optimistic Display", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 24px;
+            Font-weight: 500;
+            Line-height: 26.4px;
+            color: rgb(28, 43, 51);
+        }
+        .acard{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 18px;
+            Font-weight: 700;
+            Line-height: 27px;
+            text-decoration:rgb(0, 90, 202) ;
+            color: rgb(0, 90, 202)
+        }
+        .start{
+            width: 100%;
+            height: 100px;
+            padding-left: 100px;
+            padding-right: 150px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .carrousel{
+            width: 10%;
+            height: 80px;
+            display: flex;
+            gap: 20px;
+            justify-content: end;
+
+        }
+        .carro{
+            border: 1px solid;
+            width: 50px;
+            height: 50px;
+            padding: 17px;
+            border-radius: 360px;
+        }
+        .card3b{
+            width: 100%;
+            height: 700px;
+            padding-left: 50px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .cardimg:hover{
+            zoom: 102%;
+            cursor: pointer;
+        }
+        .card3bbtn{
+            width: 30%;
+            height: 40px;
+            border-radius: 25px;
+        }
+        .card3bborder{
+            width: 30%;
+            height: 600px;
+            border-radius: 20px;
+        }
+        .card3bimg{
+            width: 100%;
+            height: 350px;
+            border-radius: 20px;
+        }
+        .acard:hover{
+            opacity: 0.5;
+            text-decoration: grey;
+        }
+        .acard3b:hover{
+            opacity: 0.5;
+            text-decoration: grey;
+        }
+        .imgcard3b{
+            width: 100%;
+            height: 350px;
+            border-radius: 20px;
+        }
+        .imgcard3b:hover{
+            zoom: 102%;
+            cursor: pointer;
+        }
+        .card3btext{
+            width: 100%;
+            height: 250px;
+            padding-top: 20px;
+        }
+        .why{
+            padding-top: 120px;
+            width: 100%;
+            height: 690px;
+            background-color: rgb(20,60,83);
+        }
+        .h23{
+            font-family: "Optimistic Display", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 48px;
+            Font-weight: 500;
+            Line-height: 52.8px;
+            color: rgb(255, 255, 255);
+        }
+        .whytext{
+            width: 100%;
+            height: 100px;
+            text-align: center;
+        }
+        .card3{
+            width: 100%;
+            height: 300px;
+            padding-left: 150px;
+            padding-right: 150px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .card2{
+            width: 30%;
+            height: 250px;
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px 25px 50px 30px;
+        }
+        .whybtn{
+            text-align: center;
+            display: block;
+        }
+        .success{
+            width: 150px;
+            height: 45px;
+            background-color: white;
+            border-radius: 25px;
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 16px;
+            Font-weight: 700;
+            Line-height: 22.4px;
+            color: rgb(28, 43, 51);
+            border: 0.1px solid grey;
+        }
+        .success:hover{
+            opacity: 0.8;
+        }
+        .h24{
+            font-family: "Optimistic Display", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 58px;
+            Font-weight: 500;
+            Line-height: 52.8px;
+            color: rgb(28, 43, 51);
+        }
+        .supdiv{
+            margin-top: 80px;
+            width: 100%;
+            height: 220px;
+            padding-left: 100px;
+            padding-right: 150px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .support{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 50px;
+            padding-right: 50px;
+            width: 100%;
+            height: 220px;
+            border-radius: 80px;
+            background-color: rgb(241,244,247);
+        }
+        .supnav{
+            height: 100px;
+        }
+        .supbtn1{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 16px;
+            Font-weight: 400;
+            Line-height: 17.6px;
+            color: rgb(0, 0, 0);
+            width: 170px;
+            height: 35px;
+            border-radius: 20px;
+            border: 0.5px solid grey;
+        }
+        .supbtn2{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 16px;
+            Font-weight: 400;
+            Line-height: 17.6px;
+            color: rgb(0, 0, 0);
+            width: 150px;
+            height: 35px;
+            border-radius: 20px;
+            border: 0.5px solid grey;
+        }
+        .supbtn1:hover{
+            opacity: 0.5;
+        }
+        .supbtn2:hover{
+            opacity: 0.5;
+        }
+        .getlatest{
+            margin-top: 80px;
+            padding-left: 100px;
+            width: 100%;
+            height: 150px;
+        }
+        .h25{
+            font-family: "Optimistic Display", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 58px;
+            Font-weight: 500;
+            Line-height: 52.8px;
+            color: rgb(28, 43, 51);
+        }
+        .h31{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 12px;
+            Font-weight: 600;
+            Line-height: 13.2px;
+            color: rgb(28, 43, 51);
+        }
+        .h26{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 24px;
+            Font-weight: 500;
+            Line-height: 26.4px;
+            color: rgb(28, 43, 51);
+        }
+        .p4{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 18px;
+            Font-weight: 400;
+            Line-height: 27px;
+            color:  rgb(70, 90, 105);
+        }
+        .acard3b{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 16px;
+            Font-weight: 400;
+            Line-height: 17.6px;
+            text-decoration:rgb(70, 90, 105) ;
+            color:  rgb(70, 90, 105);
+        }
+        strong{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 16px;
+            Font-weight: 700;
+            Line-height: 22.4px;
+            color: rgb(0, 100, 224);
+        }
+        .meta2{
+            padding-left: 100px;
+            padding-right: 150px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .metadev{
+            width: 550px;
+            height: 400px;
+        }
+        .mtcntimg:hover{
+            zoom: 105%;
+            cursor: pointer;
+        }
+        h5{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 12px;
+            Font-weight: 400;
+            Line-height: 13.2px;
+            color: rgb(103, 120, 138);
+        }
+        .pbold{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 18px;
+            Font-weight: 400;
+            Line-height: 27px;
+            color: rgb(0, 0, 0);
+        }
+        .lastcard{
+            height: 700px;
+            width: 100%;
+            padding-left: 100px;
+            padding-right: 150px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .lcdborder{
+            height: 600px;
+            width: 30%;
+            border-radius: 20px;
+            background-color: white;
+        }
+        .lcdimg{
+            width: 100%;
+            height: 280px;
+            border-radius: 25px;
+        }
+        .lcdimg:hover{
+            zoom: 102%;
+            cursor: pointer;
+        }
+        .lcdtext{
+            margin-top: 40px;
+            width: 100%;
+            height: 320px;
+        }
+        .moreonthe{
+            height: 100px;
+            width: 100%;
+            border: 1px solid;
+
+        }
+        .more{
+            height: 40px;
+            width: 150px;
+            border-radius: 20px;
+            background-color: rgb(0,100,224);
+            color: white;
+            position: relative;
+            left: 42.5%;
+            bottom: 27px;
+            border:rgb(0,100,224) ;
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 16px;
+            Font-weight: 700;
+            Line-height: 22.4px;
+        }
+        .more:hover{
+            cursor: pointer;
+            opacity: 0.9;
+        }
+        .hr1{
+            opacity: 0.5;
+            margin-left: 100px;
+            margin-right: 100px;
+            text-align: center;
+        }
+        .newsl{
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            height: 350px;
+            width: 100%;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+        .newsldiv{
+            padding-left: 50px;
+            padding-right: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 200px;
+            border-radius: 50px;
+            background-color: rgb(28,43,51);
+        }
+        .h1l{
+            font-family: "Optimistic Display", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 36px;
+            Font-weight: 500;
+            Line-height: 39.6px;
+            color: white;
+        }
+        .pboldl{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 18px;
+            Font-weight: 400;
+            Line-height: 27px;
+            color: white;
+        }
+        .newslbtn{
+            width: 100px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: white;
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 18px;
+            Font-weight: 400;
+            Line-height: 27px;
+            color: rgb(28,43,51);
+        }
+        .newslbtn:hover{
+            opacity: 0.7;
+            cursor: pointer;
+        }
+        .metagrid{
+            height: 300px;
+            width: 100%;
+            display: flex;
+            gap: 100px;
+            padding-top: 50px;
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+        .mtlogo2{
+            width: 100px;
+            height: 70px;
+        }
+        .licons{
+            height: 70px;
+            width: 300px;
+            display: flex;
+            gap: 20px;
+            padding-left: 12px;
+            margin-top: 20px;
+        }
+        .licons>i{
+            font-size: x-large;
+        }
+        .h6grid{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 14px;
+            Font-weight: 500;
+            Line-height: 54px;
+            color: rgb(35, 35, 35);
+        }
+        .ligrid{
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 12px;
+            Font-weight: 400;
+            Line-height: 20px;
+            color:  rgb(70, 90, 105);
+            list-style-type: none;
+        }
+        footer{
+            width: 100%;
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+        .ft{
+            border-top: 1px solid;
+            height: 150px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ftul{
+            display: flex;
+            gap: 20px;
+            list-style-type: none;
+        }
+        .hr2{
+            width: 100%;
+            margin-top: 10px;
+            opacity: 0.5;
+        }
+        .fa-sort-down{
+            font-size: small;
+            position: relative;
+            bottom: 5px;
+        }
+        a{
+            color: rgb(35, 35, 35);
+            text-decoration: none;
+
+        }
+        .aothers:hover{
+            opacity: 0.5;
+            text-decoration: grey;
+        }
+        .ftli2:hover{
+            cursor: pointer;
+        }
+        .fa-bars{
+            display: none;
+        }
+        .imagegridm1{
+            display: none;
+         }
+        .imgiconsm1{
+            display: none;
+        }
+        .imggridm1{
+            display: none;
+        }
+        @media screen and (max-width:850px){
+            body{
+                overflow-x: hidden;
+            }
+            header{
+                border: 1px solid red;
+                width: 100%;  
+                height: 100px;
+            }
+            nav{
+                width: 100%;
+                border: 1px solid aqua;
+                height: 50px;
+            }
+            section{
+            width: 100%;
+            min-height: 1000px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+            .fa-bars{
+                display: block;
+                position: absolute;
+                top: 35px;
+                left: 10px;
+                
+            }
+            .fa-chevron-down{
+                display: none;
+            }
+            .fa-magnifying-glass{
+                display: none;
+            }
+            .ahead{
+                display: none;
+            }
+            .loginbtn{
+                display: none;
+            }
+            .ulicons{
+                border: 1px solid;
+               width: 100%;
+               gap: 10px;
+            }
+            .imgicons{
+                width: 50px;
+                border-radius: 15px;
+            }
+        .imggrid{
+               display: none;
+            }
+            .imagegrid{
+               display: none;
+            }
+            .ulicons{
+                display: none;
+            }
+            .lihead{
+                display: none;
+            }
+            .imagegridm1{
+            display: block;
+            border: 1px solid;
+            width: 100%;
+            height: 500px;
+        }
+        .imggridm1{
+            display: block;
+            border: 1px solid;
+            margin-top: 50px;
+            width: 100%;
+            height: 500px;
+            /* position: relative; */
+        }
+        .uliconsm1{
+            border: 1px solid red;
+            display: block;
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            list-style-type: none;
+            position: relative;
+            bottom: 100px;
+            justify-content: center;
+        }
+        .imgiconsm1{
+            display: block;
+            width: 50px;
+            border-radius: 20px;
+        }
+            .h11{
+            width: 100%;
+            font-family: "Optimistic Display", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 24px;
+            Font-weight: 500;
+            Line-height: 70.4px;
+            color: rgb(28, 43, 51);
+            position: relative;
+            bottom: 450px;
+            left: 17%;
+            }
+            .p1{
+            width: 100%;
+            font-family: "Optimistic Text", Helvetica, "Helvetica Neue", Arial, sans-serif;
+            Font-size: 18px;
+            Font-weight: 400;
+            Line-height: 27px;
+            color: rgb(28, 43, 51);
+            position: relative;
+            bottom: 430px;
+            left: 2%;
+        }
+        span{
+            position: absolute;
+            left: 24%;
+        }
+        .metaconnect{
+            width: 100%;
+            height: 750px;
+            padding-left: 1px;
+            padding-right: 1px;
+            flex-direction: column;
+        }
+        .mtcnt{
+            width: 100%;
+        }
+        .mtcntimg{
+            border: 1px solid;
+            width: 100%;
+            height: 300px;
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+        .watchnow{
+            border: 1px solid;
+            margin-top: 0px;
+            width: 100%;
+        }
+        .exptext{
+            border: 1px solid;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+        .explore{
+            width: 100%;
+            height:2200px ;
+            border: 1px solid;
+            flex-direction: column;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .card{
+            width: 100%;
+        }
+        .start{
+            width: 100%;
+            height: 200px;
+            flex-direction: column;
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+        .starttext{
+            border: 3px solid blue;
+            width: 100%;
+            height: 100px;
+        }
+        .carrousel{
+            border: 1px solid;
+            width: 100%;
+            padding-left: 1px;
+            padding-right: 1px;
+            justify-content: left;
+        
+        }
+        .card3b{
+            border: 1px solid;
+            height: 2400px;
+            flex-direction: column;
+            width: 100%;
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+        .card3bborder{
+            width: 100%;
+        }
+        .card3btext{
+            width: 100%;
+        }
+        .card3bbtn{
+            width: 150px;
+        }
+        .why{
+            border: 1px solid aqua;
+            width: 100%;
+            height: 1250px;
+        }
+        .whytext{
+            border: 1px solid;
+            width: 100%;
+
+        }
+        .card3{
+            width: 100%;
+            flex-direction: column;
+            border: 1px solid red;
+            height: 900px;
+            padding-left: 1px;
+            padding-right: 1px;
+
+        }
+        .card2{
+            width: 100%;
+        }
+        .supdiv{
+            border: 1px solid;
+            width: 100%;
+            padding-left: 1px;
+            padding-right: 1px;
+            height: 300px;
+            flex-direction: column;
+        }
+        .support{
+            width: 100%;
+            height: 350px;
+            border-radius: 25px;
+            flex-direction: column;
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+        .suph2{
+            width: 100%;
+            padding-left: 20px;
+            padding-top: 30px;
+        }
+        .supnav{
+            width: 100%;
+            padding-left: 20px;
+           
+        }
+        .getlatest{
+            width: 100%;
+            border: 3px solid aqua;
+            padding-left: 1px;
+            padding-right: 1px;
+            height: 250px;
+        }
+        .meta2{
+            width: 100%;
+            flex-direction: column;
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+        .metadev{
+            width: 100%;
+        }
+        .lastcard{
+            width: 100%;
+            flex-direction: column;
+            padding-left: 1px;
+            padding-right: 1px;
+            height: 2200px;
+        }
+        .lcdborder{
+            width: 100%;
+        }
+        .hr1{
+            width: 100%;
+            margin-left: 1px;
+            margin-right: 1px;  
+        }
+        .more{
+            left: 28%;
+        }
+        .newsl{
+            width: 100%;
+            padding-left: 1px;
+            padding-right: 1px;
+            padding-top: 1px;
+        }
+        .newsldiv{
+            width: 100%;
+            padding-left: 20px;
+            flex-direction: column;
+            height: 300px;
+            padding-top: 30px;
+            padding-bottom: 40px;
+        }
+        .newslbtn{
+            margin-left: -130px;
+
+        }
+        .metagrid{
+            width: 100%;
+            flex-direction: column;
+            padding-left: 1px;
+            padding-right: 1px;
+            height: 950px;
+            border: 2px solid red;
+            
+        }
+        .metaicon{
+            height: 80px;
+            border: 1px solid;
+        }
+        .build1{
+            border: 1px solid aqua;
+            height: 200px;
+
+        }
+        footer{
+            width: 100%;
+            flex-direction: column;
+            height: 330px;
+            padding-left: 1px;
+            padding-right: 1px;
+            
+        }
+        .ft{
+            padding-top: 40px;
+            height: 310px;
+            width: 100%;
+            flex-direction: column;
+        }
+        .ftd1{
+            width: 100%;
+            flex-direction: column;
+        }
+        .ftd2{
+            width: 100%;
+            flex-direction: column;
+        }
+        .ftul{
+            width: 100%;
+            flex-direction: column;
+        }
+
+       
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <i class="fa-solid fa-bars"></i><img class="logo" src="./media/metalogo.png" alt="">
+            <ul class="ul1">
+                <li class="lihead"><a href="" class="ahead">Build with us</a> <i class="fa-solid fa-chevron-down"></i></li>
+                <li class="lihead"><a href="" class="ahead">Docs</a></li>
+                <li class="lihead"><a href="" class="ahead">Blog</a></li>
+                <li class="lihead"><a href="" class="ahead">Resources</a><i class="fa-solid fa-chevron-down"></i></li>
+                <li class="lihead"><a href="" class="ahead">Developer centers</a><i class="fa-solid fa-chevron-down"></i></li>             </ul>
+        </nav>
+            <div class="lgse">
+                <button class="loginbtn"><a href="" class="alogin">Login</a></button> <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+    </header>
+    <section>
+        <div class="imagegridm1" >
+            <img class="imggridm1" src="./media/imggridmobile.png" alt="">
+            <h1 class="h11">Social technologies</h1>
+            <p class="p1">Social technologies that help developers grow,
+                 build community and monetize their apps.</p>
+        </div>
+        <div class="iconsm1">
+            <ul class="uliconsm1">
+                <li><img class="imgiconsm1" src="./media/facebookicon.webp" alt=""></li>
+                <li><img class="imgiconsm1" src="./media/messengericon.webp" alt=""></li>
+                <li><img class="imgiconsm1" src="./media/instagramicon.webp" alt=""></li>
+                <li><img class="imgiconsm1" src="./media/whatsappicon.webp" alt=""></li>
+                <li><img class="imgiconsm1" src="./media/threadicon.webp" alt=""></li>
+            </ul>
+        </div>
+        <div class="imagegrid">
+            <img class="imggrid" src="./media/image grid.png" alt="">
+            <h1 class="h11">Social technologies</h1>
+            <p class="p1">Social technologies that help developers grow,
+                 build community and monetize   <span>their apps.</span></p>
+        </div>
+        <div class="icons">
+            <ul class="ulicons">
+                <li><img class="imgicons" src="./media/facebookicon.webp" alt=""></li>
+                <li><img class="imgicons" src="./media/messengericon.webp" alt=""></li>
+                <li><img class="imgicons" src="./media/instagramicon.webp" alt=""></li>
+                <li><img class="imgicons" src="./media/whatsappicon.webp" alt=""></li>
+                <li><img class="imgicons" src="./media/threadicon.webp" alt=""></li>
+            </ul>
+        </div>
+        <div class="metaconnect">
+            <div class="mtcnt">
+                <img class="mtcntimg" src="./media/metaconnect.webp" alt="">
+            </div>
+            <div class="watchnow">
+                <h1 class="h12">Meta Connect 2024</h1>
+                <br>
+                <p class="p2">Explore the latest developments in AI,
+                     mixed reality and wearables from sessions at Connect 2024.</p>
+                     <br>
+                     <button class="watchbtn">Watch now</button>
+            </div>
+        </div>
+        <div class="exptext">
+            <h1 class="h12">Explore social technologies</h1>
+            <p class="p2">
+                Learn more about our social technologies across growth,
+                 business messaging and social integrations.</p>
+        </div>
+        <div class="explore">
+                 <div class="card">
+                    <div class="cardimg">
+                        <img class="cdimg" src="./media/cardimg1.webp" alt="">
+                    </div>
+                    <div class="cardtext">
+                        <h2 class="h21">Ads and monetization</h2>
+                        <br>
+                        <p class="p2">Grow your business and monetize at scale.</p>
+                        <a href="" class="acard">Learn more →</a>
+                    </div>
+                 </div>
+                 <div class="card">
+                    <div class="cdimg">
+                        <img class="cardimg" src="./media/cardimg2.webp" alt="">
+                    </div>
+                    <div class="cardtext">
+                        <h2 class="h21">Business Messaging</h2>
+                        <br>
+                        <p class="p2">Get the conversation started with Business Messaging.</p>
+                        <a href="" class="acard">Learn more →</a>
+                    </div>
+                 </div>
+                 <div class="card">
+                    <div class="cdimg">
+                        <img class="cardimg" src="./media/cardimg3.webp" alt="">
+                    </div>
+                    <div class="cardtext">
+                        <h2 class="h21">Social integrations</h2>
+                        <br>
+                        <p class="p2">Engage people with Meta social integrations.</p>
+                        <a href="" class="acard">Learn more →</a>
+                    </div>
+                 </div>
+        </div>
+        <div class="start">
+            <div class="starttext">
+                <h1 class="h12">Start building with us</h1>
+            </div>
+            <div class="carrousel">
+                <div class="carro">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="carro">
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card3b">
+            <div class="card3bborder">
+                <div class="card3bimg">
+                    <img class="imgcard3b" src="./media/cardimg4.webp" alt="">
+                </div>
+                <div class="card3btext">
+                    <h3 class="h31">FEATURED</h3>
+                    <br>
+                    <h2 class="h26">App Ads</h2>
+                    <br>
+                    <p class="p4">Get more people to install and engage with your app.</p>
+                    <br>
+                    <button class="card3bbtn"><a href="" class="acard3b">Learn more <strong>→</strong></a></button>
+                </div>
+            </div>
+            <div class="card3bborder">
+                <div class="card3bimg">
+                    <img class="imgcard3b" src="./media/cardimg5.webp" alt="">
+                </div>
+                <div class="card3btext">
+                    <h3 class="h31">FEATURED</h3>
+                    <br>
+                    <h2 class="h26">App Ads</h2>
+                    <br>
+                    <p class="p4">Get more people to install and engage with your app.</p>
+                    <br>
+                    <button class="card3bbtn"><a href="" class="acard3b">Learn more <strong>→</strong></a></button>
+                </div>
+            </div>
+            <div class="card3bborder">
+                <div class="card3bimg">
+                    <img class="imgcard3b" src="./media/cardimg6.webp" alt="">
+                </div>
+                <div class="card3btext">
+                    <h3 class="h31">FEATURED</h3>
+                    <br>
+                    <h2 class="h26">App Ads</h2>
+                    <br>
+                    <p class="p4">Get more people to install and engage with your app.</p>
+                    <br>
+                    <button class="card3bbtn"><a href="" class="acard3b">Learn more <strong>→</strong></a></button>
+                </div>
+        </div>
+        </div>
+        <div class="why">
+            <div class="whytext">
+                <h2 class="h23">Why build with us?</h2>
+            </div>
+            <div class="card3">
+                <div class="card2">
+                    <h2 class="h24">3.2B</h2>
+                    <br>
+                    <p class="p2">We estimate there are more than 3.2 billion 
+                        people who use at least one of our apps each day</p>
+                </div>
+                <div class="card2">
+                    <h2 class="h24">600M</h2>
+                    <br>
+                    <p class="p2">Conversations between people 
+                        and businesses occur every day on our platforms</p>
+                </div>
+                <div class="card2">
+                    <h2 class="h24">2M+</h2>
+                    <br>
+                    <p class="p2">Developers have downloaded Llama,
+                         our industry-leading open source artificial intelligence model</p>
+                </div>
+            </div>
+            <div class="whybtn">
+                <button class="success">Success stories</button>
+            </div>
+        </div>
+        <div class="supdiv">
+            <div class="support">
+                <div class="suph2">
+                    <h2 class="h12">Support</h2>
+                    <br>
+                    <p class="pbold">Need help? Check out our support center and tools.</p>
+                </div>
+                <div class="supnav">
+                    <button class="supbtn1">Developer support <strong>→</strong> </button>
+                    <br><br>
+                    <button class="supbtn2"> Developer tools <strong> →</strong></button>
+                </div>
+            </div>
+        </div>
+            <div class="getlatest">
+                <h2 class="h25">Get the latest social technology news</h2>
+        </div>
+        <div class="meta2">
+            <div class="mtcnt">
+                <img class="mtcntimg" src="./media/metaconnect.webp" alt="">
+            </div>
+            <div class="metadev">
+                <h5>SEPTEMBER 27, 2024</h5>
+                <br>
+                <h1 class="h12">Meta Connect 2024 Developer Recap</h1>
+                <br>
+                <p class="p2">On September 25th and 26th, at our 11th annual Connect conference, Meta unveiled
+                     the latest advancements in mixed reality, AI, and...</p>
+                     <br>
+                     <p class="pbold">Artificial Intelligence, Developer Tools, Virtual Reality, Meta Connect, 2024</p>
+                     <br>
+            </div>
+        </div>
+        <div class="lastcard">
+            <div class="lcdborder">
+                <div class="lcdimg">
+                    <img class="lcdimg" src="./media/cardimg7.jpg" alt="">
+                </div>
+                <div class="lcdtext">
+                    <h5>OCTOBER 1, 2024</h5>
+                    <br>
+                    <h2 class="h26">Introducing new features for the Threads API </h2>
+                    <br>
+                    <P class="p4">We want to to make Threads the place where people, especially creators and businesses,
+                         connect with the new and existing audiences...</P>
+                         <br>
+                         <p class="pbold">Business Tools, Platforms</p>
+                </div>
+            </div>
+        <div class="lcdborder">
+            <div class="lcdimg">
+                <img class="lcdimg" src="./media/cardimg8.png" alt="">
+            </div>
+            <div class="lcdtext">
+                <h5>SEPTEMBER 30, 2024</h5>
+                <br>
+                <h2 class="h26">Implementing Generative AI API Features for Ads Creative</h2>
+                <br>
+                <P class="p4">With Meta's first generative AI-powered features for ad creatives now available for all eligible1 advertisers, you can now access the...</P>
+                     <br>
+                     <p class="pbold">Business Tools,2024,Marketing API</p>
+            </div>
+
+        </div>
+        <div class="lcdborder">
+            <div class="lcdimg">
+                <img class="lcdimg" src="./media/cardimg9.png" alt="">
+            </div>
+            <div class="lcdtext">
+                <h5>SEPTEMBER 23, 2024</h5>
+                <br>
+                <h2 class="h26">New Meta for Developers Experience </h2>
+                <br>
+                <P class="p4">We are excited to announce that beginning this month, developers will have new ways to seamlessly reach the content, resources, an...</P>
+                     <br>
+                     <p class="pbold">2024</p>
+            </div>
+    </div>
+        </div>
+        <hr class="hr1">
+        <button class="more">More on the blog</button>
+        <div class="newsl">
+            <div class="newsldiv">
+                <div class="newsltext">
+                    <h1 class="h1l">Get our newsletter</h1>
+                    <br>
+                    <p class="pboldl">Sign up for monthly updates from Meta for Developers.</p>
+                </div>
+                <button class="newslbtn">Sign up</button>
+        </div>
+        </div> 
+        <hr class="hr2">
+        <div class="metagrid">
+            <div class="metaicon">
+                <img class="mtlogo2" src="./media/metalogo.png" alt="">
+                <div class="licons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-youtube"></i>  
+                </div>
+            </div>
+            <div class="buildl">
+                <h6 class="h6grid">Build with Meta</h6>
+                <ul class="ulgrid">
+                    <li class="ligrid"><a class="aothers" href="">AI</a></li>
+                    <li class="ligrid"><a class="aothers" href="">Meta Horizon OS</a></li>
+                    <li class="ligrid"><a class="aothers" href="">Social technologies</a></li>
+                </ul>
+                <h6 class="h6grid">News</h6>
+                <ul class="ulgrid">
+                    <li class="ligrid"><a class="aothers" href="">Meta for Developers</a></li>
+                    <li class="ligrid"><a class="aothers" href="">Blog</a></li>
+                    <li class="ligrid"><a class="aothers" href="">Success stories</a></li>
+                </ul>
+            </div>
+            <div class="supportl">
+                <h6 class="h6grid">Support</h6>
+                <ul class="ulgrid">
+                    <li class="ligrid"><a class="aothers" href="">Developer support</a></li>
+                    <li class="ligrid"><a class="aothers" href="">Bug tool</a></li>
+                    <li class="ligrid"><a class="aothers" href="">Platform status</a></li>
+                    <li class="ligrid"><a class="aothers" href="">Developer community forum</a></li>
+                    <li class="ligrid"><a class="aothers" href="">Report an incident</a></li>
+                </ul>
+            </div>
+            <div class="terms">
+                <h6 class="h6grid">Terms and policies</h6>
+                <ul class="ulgrid">
+                    <li class="ligrid"><a class="aothers" href="">Responsible platform initiatives</a></li>
+                    <li class="ligrid"><a class="aothers" href="">Platform terms</a></li>
+                    <li class="ligrid"><a class="aothers" href="">Developer policies</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <div class="ft">
+            <div class="ftd1">
+                <p class="ftp">© 2024 Meta</p>
+            </div>
+            <div class="ftd2">
+                <ul class="ftul">
+                    <li class="ftli"><a class="aothers" href="">About</a></li>
+                    <li class="ftli"><a class="aothers" href="">Careers</a></li>
+                    <li class="ftli"><a class="aothers" href="">Privacy Policy</a></li>
+                    <li class="ftli"><a class="aothers" href="">Cookies</a></li>
+                    <li class="ftli"><a class="aothers" href="">Terms</a></li>
+                    <li class="ftli2">English (US)<i class="fa-solid fa-sort-down"></i></li>
+                </ul>
+            </div>
+        </div>
+        </footer>
+    </section>
+</body>
+</html>
